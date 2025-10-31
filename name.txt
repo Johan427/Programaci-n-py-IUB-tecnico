@@ -1,3 +1,7 @@
 Repositorio de: Johan Beleño
 Aclaración: Muchos de los archivos están subidos en .ipynb de Google colab y otros directamente de .py.
 esta aclaración se hace debido a que los .pynb presentan codigo extra que puede resultar confuso pero aparecen para su ejecución.
+
+Además las fechas de pubicaciones se realizaron en este repositorio tiempo después de la subida original (se resubieron corte 1 y la clase1 del corte 2), por lo que los repositorios se mantendrán en linea para evitar confunciones con la fecha de subida.
+
+Este reposcitorio se crea para mantener un orden para esta clase.
