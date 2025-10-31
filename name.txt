@@ -1,1 +1,3 @@
 Repositorio de: Johan Beleño
+Aclaración: Muchos de los archivos están subidos en .ipynb de Google colab y otros directamente de .py.
+esta aclaración se hace debido a que los .pynb presentan codigo extra que puede resultar confuso pero aparecen para su ejecución.
