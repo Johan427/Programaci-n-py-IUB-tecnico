@@ -1,3 +1,14 @@
+"""
+Integrantes:
+Kenner Pacheco
+Danyer Velasquez
+Adrian Yepez
+Johan Beleño
+Haminson Bolivar
+Cristian Barros
+"""
+
+
 from matplotlib.pylab import radians
 from IPython.display import display
 import ipywidgets as widgets
@@ -7,16 +18,16 @@ import random
 import numpy as np
 
 
-class Tablero:
+class Tablero: #Ingresan los datos
   global size_x
   global size_y
   size_x = int(input('Tamaño tablero en x: '))
   size_y= int(input('Tamaño tablero en y: '))
 
-  size = (size_x,size_y)
+  size = (size_x,size_y) #Tamaño con los datos proporcionados anteriormente
 
 
-  def __init__(self, tamano_celda=(50,50), n_celdas=size):
+  def __init__(self, tamano_celda=(50,50), n_celdas=size):#tamaño de celdas
     self.out = widgets.HTML()
     display(self.out)
     self.tamano_celda = tamano_celda
@@ -25,7 +36,7 @@ class Tablero:
   def dibujar(self, objetos):
     tablero = "<table border='1' >{}</table>"
     filas = ""
-
+#Creación de celdas mediante Matriz (2 cilos 1 eje x y 1 en eje y)
     for i in range(self.n_celdas[0]):
       s = ""
 
@@ -43,7 +54,7 @@ class Tablero:
     tablero = tablero.format(filas)
     self.out.value = tablero
 
-
+ #Posiciones iniciales del robot, además del angulo y energia
 class Agente:
   angulo = int(input('Angulo: '))
   x = int(input('Pos x: '))
@@ -53,7 +64,7 @@ class Agente:
   global contador_hoja
   contador_hoja = 0
 
-
+#Robot representación y posición en celda
   def __init__(self, x=x, y=y, angulo=angulo, emoticon="🤖", tamano_emoticon=30, energia = energia, size_x = size_x,size_y = size_y,contador_hoja = contador_hoja):
     self.x = x
     self.y = y
@@ -64,7 +75,7 @@ class Agente:
     self.contador_hoja = contador_hoja
     self.posiciones_visitadas = [(x, y)]
 
-
+#parece al los datos de memoria del robot en el recorrid0, quizaz movimientos de 90 grados
   def sensor(self,flag):
     while(flag == True):
       n = (len(objetos))
@@ -195,10 +206,11 @@ class Agente:
 energia_total = []
 hojas_recogidas = []
 hojas_total = []
+#se piden las basuras (cant), además de los movimientos del robot
 num_basuras = int(input('Número de basura: '))
 romper = 0
 memoria = bool(input('1 para agente con memoria y 0 para agente sin memoria: '))
-
+#posiciones de las basuras
 agente = Agente()
 objetos = [agente]
 for j in range(num_basuras):
@@ -239,7 +251,7 @@ promedio_hojas = np.mean(hr)
 
 
 plt.bar(range(len(hr)), hr)
-
+#muestra de datos finales + graficos
 
 plt.xlabel("Iteraciónes")
 plt.ylabel("Cantidad de hojas recogidas")
@@ -254,6 +266,9 @@ plt.show()
 print('El promedio de energia es: ', promedio)
 print('El promedio de hojas recogidas es: ',promedio_hojas)
 
+#####################################################################################
+
+#programa de "epidemia", viendolo de rapidez algo similar a plague inc jejej
 
 import time, enum
 import numpy as np
@@ -580,4 +595,5 @@ for i in range(0, 10):
 plt.plot(mean_infected)
 plt.xlabel('Iteración')
 plt.ylabel('Media de infectados')
+
 plt.show()
